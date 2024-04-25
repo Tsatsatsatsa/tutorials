@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate {
         }
       );
       const user = await this.usersRepository.findOne({ where: { id: payload.id } })
-      request['user'] = payload;
+      request['user'] = user;
     } catch {
       throw new UnauthorizedException();
     }
