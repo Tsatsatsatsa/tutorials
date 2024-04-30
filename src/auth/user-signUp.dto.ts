@@ -1,19 +1,19 @@
-import { IsEmail, IsNotEmpty } from "class-validator";
+import { IsEmail, IsNotEmpty } from 'class-validator';
 
 export class UserSignUpDto {
-    firstName: string;
+  firstName: string;
 
-    lastName: string;
+  lastName: string;
 
-    @IsEmail()
-    email: string;
+  @IsEmail()
+  email: string;
 
-    @IsNotEmpty()
-    password: string;
+  @IsNotEmpty()
+  password: string;
 
-    createdDate: Date;
+  createdDate: Date;
 
-    updatedAt: Date;
+  updatedAt: Date;
 
-    removedAt: Date;
+  removedAt: Date;
 }
