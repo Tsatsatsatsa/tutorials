@@ -10,10 +10,9 @@ import { UpdateUserDto } from "./update-user.dto";
 @Injectable()
 export class UserService {
     constructor(@InjectRepository(User)
-    private usersRepository: Repository<User>,) { }
+    private usersRepository: Repository<User>) { }
 
     getAll() {
-        console.log(new Date)
         return this.usersRepository.find()
     }
 

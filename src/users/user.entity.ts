@@ -1,6 +1,7 @@
 
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from 'typeorm';
-
+import { Post } from '@nestjs/common';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, OneToMany } from 'typeorm';
+import { Article } from './articles/article.entity';
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
@@ -27,5 +28,7 @@ export class User {
   @DeleteDateColumn()
   removedAt: Date;
 
+  @OneToMany(() => Article, (article: Article) => article.user)
+  articles: Article[]
 
 }
